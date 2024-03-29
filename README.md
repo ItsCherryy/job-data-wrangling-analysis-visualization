@@ -1,4 +1,4 @@
-# Job Data Wrangling Analysis Visualization
+# Job Data Wrangling, Analysis & Visualization
  End to end system from ETL to training a classification model to visualizing the data
 
 # What I Learned
