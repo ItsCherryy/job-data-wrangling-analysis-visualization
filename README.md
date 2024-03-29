@@ -28,7 +28,7 @@
 
 # Web Interface Demonstration
 ## HomePage
-![Home Page](mages/homepage.png)
+![Home Page](images/homepage.png)
 
 ## Category-specific Job Listings
 ![Category specific jobs](images/category_specific_jobs.png)
