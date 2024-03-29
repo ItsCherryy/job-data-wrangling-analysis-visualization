@@ -43,4 +43,4 @@
 ![Category Recommendation](images/category_recommendation.gif)
 
 ## Save Jobs
-![Save Jobs](job_save.gif)
+![Save Jobs](images/job_save.gif)
