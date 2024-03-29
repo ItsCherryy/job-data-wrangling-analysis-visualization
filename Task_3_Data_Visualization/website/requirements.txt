@@ -1,0 +1,7 @@
+nltk
+gensim
+pandas
+time
+re
+os
+scikit-learn
