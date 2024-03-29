@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form method = "POST">
+    <p>Title:</p>
+    <p><input type = "text" name = "title" style="width:100%" value="{{ title }}" required/></p>
+    <p>Description:</p>
+    <textarea type="text" name="description" style="height:200px; width:100%" value ="{{ description }}" required>{{description}}</textarea>
+    <div>
+        <input type="radio" id="Accounting_Finance" name="job-category" value="Accounting_Finance">
+        <label for="Accounting_Finance">Accounting & Finance</label><br>
+        <input type="radio" id="Engineering" name="job-category" value="Engineering">
+        <label for="Engineering">Engineering</label><br>
+        <input type="radio" id="Healthcare_Nursing" name="job-category" value="Healthcare_Nursing">
+        <label for="Healthcare_Nursing">Healthcare & Nursing</label><br>
+        <input type="radio" id="Sales" name="job-category" value="Sales">
+        <label for="Sales">Sales</label><br>
+    </div>
+    <p><input type = "submit" formaction='/classify' value = "Recommend category" />
+    <input type = "submit" formaction='/submit' value = "Save Job" /><span>&ensp;Category will be automatically predicted if none selected</span></p>
+    <!--<p> {{ predicted_message }} </p>-->
+
+ </form> 
+
+ <script>
+    $(document).ready(function (){
+        $("#{{predicted_category}}").attr('checked','checked');
+    });
+</script>
+{% endblock %}

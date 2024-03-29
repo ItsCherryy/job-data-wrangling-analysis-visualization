@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+{% for i in range(0,length) %}
+
+<div>
+    <!-- <h2><span>ACCOUNTING & FINANCE</span></h2> -->
+    <div>
+        <p style="margin-bottom:0px"><strong><a id="job-title-{{data['Filename'][i]}}" href='#'>{{data['Title'][i]}}</a></strong></p>
+        <!-- <p id='job-desc-'+{{i}}>{{data['Filename'][i]}}</p> -->
+        <p style="margin-top:1px" id="job-desc-{{data['Filename'][i]}}">{{data['Description'][i]}}</p>
+    </div>
+</div>
+{% endfor %}
+
+<script>
+    $(document).ready(function (){
+        {% for filename in data['Filename'] %}
+            var file_url = "/{{category}}/{{filename}}"
+            $('#job-title-{{filename}}').attr('href',file_url);
+
+            var shortened = $('#job-desc-{{filename}}').text().substring(0,200);
+            $('#job-desc-{{filename}}').text(shortened+'...');     
+        {% endfor %}
+    });
+
+</script>
+
+{% endblock %}

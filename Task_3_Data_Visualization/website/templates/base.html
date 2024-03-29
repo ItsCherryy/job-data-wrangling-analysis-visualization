@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }} " type="text/css" media="all" />
+<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='job_icon.ico') }}" />
+<script src="{{ url_for('static', filename='jquery-3.6.0.js') }} "></script>
+</head>
+    <body>
+        <div id="nav">
+            <a href='/'><img src="{{url_for('static', filename='job_icon.png')}}"></a>
+            <ul>
+                <li><a href='/'>Home</a></li>
+                <li><a href='/Accounting_Finance'>Accounting & Finance</a></li>
+                <li><a href='/Engineering'>Engineering</a></li>
+                <li><a href='/Healthcare_Nursing'>Healthcare & Nursing</a></li>
+                <li><a href='/Sales'>Sales</a></li>
+                <li><a href='/classify'>Add new job</a></li>
+            </ul>
+        </div>
+        <div id="content">
+        {% block body %}
+        {% endblock %}
+        </div>
+    </body>
+</html>

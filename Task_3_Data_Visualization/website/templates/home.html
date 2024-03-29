@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div id="main">
+    <div>
+        <h2><span>Latest in Accounting & Finance</span></h2>
+        <div>
+            <h4><a id="jobs-title-{{jobs['Accounting_Finance']['Filename']}}" href='#'>{{jobs['Accounting_Finance']['Title']}}</a></h4>
+            <p id="jobs-desc-{{jobs['Accounting_Finance']['Filename']}}">{{jobs['Accounting_Finance']['Description']}}</p>
+        </div>
+    </div>
+
+    <div>
+        <h2><span>Latest in Engineering</span></h2>
+        <div>
+            <h4><a id="jobs-title-{{jobs['Engineering']['Filename']}}" href='#'>{{jobs['Engineering']['Title']}}</a></h4>
+            <p id="jobs-desc-{{jobs['Engineering']['Filename']}}">{{jobs['Engineering']['Description']}}</p>
+        </div>
+    </div>
+
+    <div>
+        <h2><span>Latest in Healthcare & Nursing</span></h2>
+
+        <div>
+            <h4><a id="jobs-title-{{jobs['Healthcare_Nursing']['Filename']}}" href='#'>{{jobs['Healthcare_Nursing']['Title']}}</a></h4>
+            <p id="jobs-desc-{{jobs['Healthcare_Nursing']['Filename']}}">{{jobs['Healthcare_Nursing']['Description']}}</p>
+        </div>
+    </div>
+
+    <div>
+        <h2><span>Latest in Sales</span></h2>
+        <div>
+            <h4><a id="jobs-title-{{jobs['Sales']['Filename']}}" href='#'>{{jobs['Sales']['Title']}}</a></h4>
+            <p id="jobs-desc-{{jobs['Sales']['Filename']}}">{{jobs['Sales']['Description']}}</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function (){
+        {% for category in categories %}
+
+            var file_url = "/{{category}}/{{jobs[category]['Filename']}}"
+            $("#jobs-title-{{jobs[category]['Filename']}}").attr('href',file_url);
+
+            var shortened = $("#jobs-desc-{{jobs[category]['Filename']}}").text().substring(0,200);
+            $("#jobs-desc-{{jobs[category]['Filename']}}").text(shortened+'...');
+        {% endfor %}
+
+
+    });
+
+</script>
+
+{% endblock %}
