@@ -1,5 +1,6 @@
 # Job Data Wrangling, Analysis & Visualization
- End to end system from ETL to training a classification model to visualizing the data
+Task 1: System to parse, cleanse and integrate XML data
+Task 2: End to end system from ETL to training a classification model to visualizing the data
 
 # What I Learned
 ## Task 1 - Data Parsing & Cleansing
